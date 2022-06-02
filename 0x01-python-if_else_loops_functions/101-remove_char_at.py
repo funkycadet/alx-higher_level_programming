@@ -4,6 +4,3 @@ def remove_char_at(str, n):
     if len(str) > n:
         new_str = str[0:n:] + str[n + 1::]
         return new_str
-
-
-print(remove_char_at("Best School", 3))
