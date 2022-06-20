@@ -2,7 +2,7 @@
 def safe_print_integer(value):
     try:
         print("{:d}".format(value))
-    except (ZeroDivisionError, ValueError):
+    except:
         return False
     else:
         return True
