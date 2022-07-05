@@ -4,6 +4,8 @@
 This module contains class Square with methods main
 
 """
+
+
 class Square:
     """class Square
 
