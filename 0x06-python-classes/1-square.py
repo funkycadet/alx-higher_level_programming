@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """1-square module
 This module defines a square based on 0-square.py by:
 - Private instance attribute: size
