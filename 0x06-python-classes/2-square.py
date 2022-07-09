@@ -18,25 +18,21 @@ class Square:
 
     This is a class that defines a square with a private size
 
-    Methods
-    -------
-    __init__(self, Square__size):
-        An empty module for the class Square
-
     """
     __size = 0
 
     def __init__(self, size=0):
         self.__size = size
-        """size_is_integer function
+        """__init__ method
 
-        This function checks if:
+        This method initializes the size argument and checks if:
         - size is < 0
         - size is not an integer
 
         """
-        try:
-            if size < 0:
-                raise ValueError("size must be >= 0")
-        except TypeError:
-            print("size must be an integer")
+        if not isinstance(size, int):
+            raise TypeError("size must be an integer")
+        elif size < 0:
+            raise ValueError("size must be >= 0")
+        else:
+            self.__size = int(size)
