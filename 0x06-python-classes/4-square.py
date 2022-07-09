@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""3-square module
+"""4-square module
 
 This module defines a square based on 3-square.py by:
 - Private instance attribute: size where:
@@ -60,6 +60,11 @@ class Square:
 
     @size.setter
     def size(self, value):
+        """size.setter method
+
+        This method is used to set the size value of the square object
+
+        """
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
         elif value < 0:
