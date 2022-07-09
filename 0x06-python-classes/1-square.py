@@ -12,11 +12,6 @@ class Square:
 
     This is a class that defines a square with a private size
 
-    Methods
-    -------
-    __init__(self, Square__size):
-        An empty module for the class Square
-
     """
     __size = 0
 
