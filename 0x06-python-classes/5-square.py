@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""3-square module
+"""5-square module
 
 This module defines a square based on 3-square.py by:
 - Private instance attribute: size where:
@@ -11,6 +11,9 @@ This module defines a square based on 3-square.py by:
          'size must be >= 0'
 - Instantiation with optional size: def __init__(self, size=0) where:
 - Public instance method: def area(self): that returns the current square area
+- Public instance method: def my_print(self): that prints in stdout the square
+  with character '#':
+     if size is equal to 0, print an empty line
 - Without importing any module
 
 """
