@@ -144,10 +144,12 @@ class Rectangle(Base):
         Method that prints in stdout a Rectangle instance with the character #
 
         """
-        for i in range(0, self.height):
-            for j in range(0, self.width):
-                print("#", end='')
-            print()
+        rectangle = self.y * "\n"
+        for i in range(self.height):
+            rectangle += (" " * self.x)
+            rectangle += ("#" * self.width) + "\n"
+
+        print(rectangle, end='')
 
     def __str__(self):
         """__str__ method
