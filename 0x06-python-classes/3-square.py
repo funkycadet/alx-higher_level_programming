@@ -3,13 +3,16 @@
 
 This module defines a square based on 2-square.py by:
 - Private instance attribute: size
+
 - Instantiation with optional size: def __init__(self, size=0) where:
-    -size must be an integer, otherwise raise a TypeError exception message:
+    - size must be an integer, otherwise raise a TypeError exception message:
      'size must be an integer'
     - if size less than 0, raise a ValueError exception with the message:
      'size must be >= 0'
+
 - Public instance method: def area(self): that returns the current square area
-- Without importing any module
+
+- without importing any module
 
 """
 

@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """0-square module
 
-This module contains class Square with methods main
+This module contains class Square with method main
 
 """
 
