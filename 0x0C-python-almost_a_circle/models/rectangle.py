@@ -2,7 +2,7 @@
 """rectangle module
 
 This module holds class Rectangle which:
-- inherits from Base
+- inherits the Base class
 
 - private instance attributes, each with its own public getter and setter:
     - __width -> width
@@ -163,3 +163,18 @@ class Rectangle(Base):
         _str_wh = "- {}/{}".format(self.width, self.height)
 
         return _str_rectangle + _str_id + _str_xy + _str_wh
+
+    def update(self, *args, **kwargs):
+        """update method
+
+        Method that uses *args, a no-keyword argument to assign arguments to
+        attributes
+
+        """
+        if args is not None and len(args) != 0:
+            list_atr = ['id', 'width', 'height', 'x', 'y']
+            for i in range(len(args)):
+                setattr(self, list_atr[i], args[i])
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
