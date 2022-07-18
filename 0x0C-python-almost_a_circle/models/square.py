@@ -71,9 +71,26 @@ class Square(Rectangle):
         self.height = value
 
     def update(self, *args, **kwargs):
+        """update method
+
+        Method that uses *args and **kwargs, keyword arguments to
+        assign non-keyword and keyword arguments to attributes
         """
-        """
-        return super().update(*args, **kwargs)
+        if args is not None and len(args) is not 0:
+            list_atr = ['id', 'size', 'x', 'y']
+            for i in range(len(args)):
+                if list_atr[i] == 'size':
+                    setattr(self, 'width', args[i])
+                    setattr(self, 'height', args[i])
+                else:
+                    setattr(self, list_atr[i], args[i])
+        else:
+            for key, value in kwargs.items():
+                if key == 'size':
+                    setattr(self, 'width', value)
+                    setattr(self, 'height', value)
+                else:
+                    setattr(self, key, value)
 
     def to_dictionary(self):
         """to_dictionary method
