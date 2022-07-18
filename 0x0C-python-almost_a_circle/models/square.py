@@ -33,7 +33,7 @@ class Square(Rectangle):
         Method that initializes properties inherited from Rectangle
 
         """
-        self.width = self.height = size
+        # self.width = self.height = size
         # self.height = size
         super().__init__(size, size, x, y, id)
 
@@ -49,3 +49,40 @@ class Square(Rectangle):
         _str_w = "- {}".format(self.width)
 
         return _str_square + _str_id + _str_xy + _str_w
+        # return super().__str__()
+
+    @property
+    def size(self):
+        """size method
+
+        Method to retrieve size property
+
+        """
+        return self.width
+
+    @size.setter
+    def size(self, value):
+        """size.setter method
+
+        Method to set size
+
+        """
+        self.width = value
+        self.height = value
+
+    def update(self, *args, **kwargs):
+        """
+        """
+        return super().update(*args, **kwargs)
+
+    def to_dictionary(self):
+        """to_dictionary method
+
+        Method to return Square instance properties in a dictionary
+
+        """
+        list_att = ['id', 'x', 'size', 'y']
+        new_dict = {}
+        for key in list_att:
+            new_dict[key] = getattr(self, key)
+        return new_dict
