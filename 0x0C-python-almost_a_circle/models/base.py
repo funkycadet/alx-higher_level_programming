@@ -25,6 +25,7 @@ class Base:
     extensions, same bugs)
 
     """
+
     __nb_objects = 0
 
     def __init__(self, id=None):
@@ -42,36 +43,36 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
-      """to_json_string method
+        """to_json_string method
 
-      Staticmethod that returns the JSON string representation of
-      list_dictionaries, a list variable
+        Staticmethod that returns the JSON string representation of
+        list_dictionaries, a list variable
 
-      """
-      if list_dictionaries is None or list_dictionaries == '[]':
-        return "[]"
-      return json.dumps(list_dictionaries)
+        """
+        if list_dictionaries is None or list_dictionaries == "[]":
+            return "[]"
+        return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
-      """save_to_file method
+        """save_to_file method
 
-      Classmethod to save object in a file
+        Classmethod to save object in a file
 
-      """
-      filename = "{}.json".format(cls.__name__)
-      list_dic = []
+        """
+        filename = "{}.json".format(cls.__name__)
+        list_dic = []
 
-      if not list_objs:
-        pass
-      else:
-        for i in range(len(list_objs)):
-          list_dic.append(list_objs[i].to_dictionary())
+        if not list_objs:
+            pass
+        else:
+            for i in range(len(list_objs)):
+                list_dic.append(list_objs[i].to_dictionary())
 
-      lists = cls.to_json_string(list_dic)
+        lists = cls.to_json_string(list_dic)
 
-      with open(filename, 'w') as f:
-        f.write(lists)
+        with open(filename, "w") as f:
+            f.write(lists)
 
     @staticmethod
     def from_json_string(json_string):
@@ -110,7 +111,7 @@ class Base:
         if os.path.exists(filename) is False:
             return []
 
-        with open(filename, 'r') as f:
+        with open(filename, "r") as f:
             list_str = f.read()
 
         list_cls = cls.from_json_string(list_str)
@@ -132,10 +133,10 @@ class Base:
 
         if cls.__name__ == "Rectangle":
             list_dic = [0, 0, 0, 0, 0]
-            list_keys = ['id', 'width', 'height', 'x', 'y']
+            list_keys = ["id", "width", "height", "x", "y"]
         else:
-            list_dic = ['0', '0', '0', '0']
-            list_keys = ['id', 'size', 'x', 'y']
+            list_dic = ["0", "0", "0", "0"]
+            list_keys = ["id", "size", "x", "y"]
 
         matrix = []
 
@@ -147,7 +148,7 @@ class Base:
                     list_dic[kv] = obj.to_dictionary()[list_keys[kv]]
                 matrix.append(list_dic[:])
 
-        with open(filename, 'w') as writeFile:
+        with open(filename, "w") as writeFile:
             writer = csv.writer(writeFile)
             writer.writerows(matrix)
 
@@ -163,14 +164,14 @@ class Base:
         if os.path.exists(filename) is False:
             return []
 
-        with open(filename, 'r') as readFile:
+        with open(filename, "r") as readFile:
             reader = csv.reader(readFile)
             csv_list = list(reader)
 
         if cls.__name__ == "Rectangle":
-            list_keys = ['id', 'width', 'height', 'x', 'y']
+            list_keys = ["id", "width", "height", "x", "y"]
         else:
-            list_keys = ['id', 'size', 'x', 'y']
+            list_keys = ["id", "size", "x", "y"]
 
         matrix = []
 
