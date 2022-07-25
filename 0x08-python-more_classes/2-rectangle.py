@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""1-rectangle module
+"""2-rectangle module
 
 This module defines a rectangle based on 0-rectangle by:
 - Private instance attribute: width
@@ -90,4 +90,4 @@ class Rectangle:
     def perimeter(self):
         """perimeter method
         """
-        return 2*(self.width + self.height)
+        return (2*self.width) + (2*self.height)
