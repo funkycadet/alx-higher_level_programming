@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-""" add_integer function """
+""" 0-add_integer module"""
 
 
 def add_integer(a, b=98):
+    """ add integer function"""
     if type(a) == float:
         a = round(a)
     elif type(b) == float:
