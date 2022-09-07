@@ -7,7 +7,7 @@ dynamic creation of attributes
 """
 
 
-class LockedClass():
+class LockedClass:
     __names__ = ['first_name']
 
     def __init__(self):
