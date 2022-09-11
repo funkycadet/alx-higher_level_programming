@@ -8,7 +8,8 @@ dynamic creation of attributes
 
 
 class LockedClass:
-    __names__ = ['first_name']
+    """ class Lockedclass"""
+    __slots__ = ['first_name']
 
     def __init__(self):
         """ Init method """
