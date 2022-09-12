@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+""" 100-my_int module"""
+
+
 class MyInt(int):
     """ class MyInt is a rebel which inherits from int"""
 
