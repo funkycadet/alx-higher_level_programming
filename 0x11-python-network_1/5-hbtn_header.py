@@ -8,5 +8,5 @@ if __name__ == "__main__":
     try:
         req = requests.get(url)
         print(req.headers['X-Request-Id'])
-    except False:
+    except:
         pass
