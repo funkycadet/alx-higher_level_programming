@@ -7,8 +7,8 @@ import sys
 
 if __name__ == "__main__":
     url = sys.argv[1]
-    try:
-        req = requests.get(url)
+    req = requests.get(url)
+    if  req.status_code >= 400:
         print(f"Error code: {req.status_code}")
-    except req.raise_for_status as e:
-        print(f"Error code: {req.status_code}")
+    else:
+        print(req.text)
