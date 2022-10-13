@@ -8,12 +8,20 @@ import sys
 
 if __name__ == "__main__":
     url = "http://0.0.0.0:5000/search_user"
-    q = str(sys.argv[1])
-    if q == None:
+    q = sys.argv[1]
+    if len(q) == 1:
         q = ""
-        print("No result")
-    elif q != type(str):
-        print("No result")
     else:
-        req = requests.post(url, data=q.encode('utf-8'))
-        print(f"[{q.id}] {q.name}")
+        q = sys.argv[1]
+
+    payload = {'q': q}
+    req = requests.post(url, data=payload)
+
+    try:
+        res = req.json()
+        if res == {}:
+            print('No result')
+        else:
+            print(f"[{res.get(id)}] {res.get('name')}")
+    except ValueError:
+        print('Not a valid JSON')
